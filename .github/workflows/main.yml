@@ -20,7 +20,7 @@ jobs:
           pip install pyinstaller pyserial
       - name: Build exe with PyInstaller
         run: |
-          pyinstaller --onefile --windowed rfid_reader.py --name rfid_reader
+          pyinstaller --onefile --windowed rfid_reader.py --name rfid_reader --hidden-import=pyserial.tools.list_ports_windows
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
