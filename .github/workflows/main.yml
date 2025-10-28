@@ -22,7 +22,7 @@ jobs:
         run: |
           pyinstaller --onefile --windowed rfid_reader.py --name rfid_reader --collect-all tkinter --hidden-import=pyserial.tools.list_ports_windows --hidden-import=pyserial.tools.list_ports_common --hidden-import=pyserial.tools.list_ports_posix --hidden-import=pyserial.tools.list_ports_osx --hidden-import=pyserial.tools --hidden-import=rfid_reader
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: rfid_reader_windows_exe
           path: dist/rfid_reader.exe
